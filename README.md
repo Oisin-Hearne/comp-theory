@@ -59,13 +59,53 @@ In order, this means:
 Variations on this formula involving different prime numbers (and occasionally cube roots instead of prime roots) are used to form the initial hashes for several different variations of the SHA.
 
 ## Task 6 - Proof of Work
+This section demonstrates Proof of Work by finding the word in a given dictionary with the highest number of leading zeroes in it's SHA256 digest.
 
+The purpose of this is to create a task that is difficult to perform computationally, as proof that some work has been done. This is used for emails (see HashCash, [11]) in order to prevent email servers from sending millions of emails simultaneously, reducing spam.
+
+It's most famous use is probably in cryptocurrency, though, where proof of work is required in order to mine a coin. An example of this could be generating a string with a certain number of leading zeroes - this would take quite some time to compute, but would be easy to verify by other machines once done.
+
+**Note**: This task requires a words.txt in the root of the repository to function. I used the one from last semseter's Emerging Technology, to the following results, hidden for brevity.
+
+<details>
+
+<summary>Results of Task 6</summary>
+
+The word with the most leading zeroes was APPLICANT, with sixteen. The hash to get this result was as follows:
+
+```
+0000000000000000110010100000000110101101110010010111001111000010101001011010100011100110101000110000000100110100111100000111001110010110110100001000100010110110110101100101000000100101001010010010111101101111111110010111101100100011011111001010101101001101
+```
+
+</details>
 
 ## Task 7 - Turing Machines
+Turing Machines are the simplest and most abstract form of a computer, reading in 1s and 0s from a tape and manipulating the tape and the position of the tape head based on the current state.
+
+This specific turing machine adds 1 to a binary number. That is, 011101 should become 011110. The state table for this turing machine has been included below.
+```python
+state_table = {
+    ("U", "0"): ("U", "0", "R"),
+    ("U", "1"): ("U", "1", "R"),
+    ("U", "_"): ("V", "_", "L"),
+    
+    ("V", "0"): ("W", "1", "L"),
+    ("V", "1"): ("V", "0", "L"),
+    ("V", "_"): ("A", "1", "R"),
+    
+    ("W", "0"): ("W", "0", "L"),
+    ("W", "1"): ("W", "1", "L"),
+    ("W", "_"): ("A", "_", "R")
+}
+```
+
+This implementation includes a simulation of all of the functionality of a turing machine - the state table, moving the tape head left and right, and so on.
 
 
 ## Task 8 - Computational Complexity
+This section features an analysis of BubbleSort, an inefficient but interesting sorting algorithm that swaps the position of items in a list in an attempt to sort it.
 
+Bubblesort was performed on all permutations of the given list [5,4,3,2,1]. It was found that at permutations closely resembling [1,2,3,4,5], the algorithm required fewer swaps and was therefore more efficient, though it quickly becomes incredibly inefficient at less sorted lists.
 
 
 ## References
