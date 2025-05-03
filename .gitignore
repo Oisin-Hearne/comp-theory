@@ -174,3 +174,4 @@ cython_debug/
 .pypirc
 
 sha256.txt
+words.txt
