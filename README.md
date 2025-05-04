@@ -6,6 +6,14 @@ Several of these tasks involve the Secure Hash Algorithm, and cover several diff
 
 More detail on the specific implementation of these tasks can be found in tasks.ipynb, where documentation cells are woven throughout the code for each task, describing how the code functions.
 
+
+## Usage
+- Ensure that the requirements in requirements.txt are present.
+- Ensure that a words.txt file containing an english dictionary of your choice is present.
+- Ensure that a sha256.txt file containing a message you would like to hash is present.
+- Run the notebook via Jupyter or VSCode.
+
+
 ## Task 1 - Bitwise Operations
 This section contains several functions for modifying binary numbers. These functions are used in the [Secure Hash Standard](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf) and are used as part of the Secure Hash Algorithm.
 
